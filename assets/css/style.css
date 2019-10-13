@@ -1,0 +1,242 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/10/2019, 04:35:20 PM
+    Author     : isaul
+*/
+
+@font-face{
+    font-family: "fajala";
+    src: url(../fonts/fuente.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif,Helvetica,Arial;
+    text-decoration: none;
+}
+
+body{
+    background: url(../img/cubes.png) #F4F4F4;
+}
+
+
+/*************HEADER***********************/
+
+#head{
+    width: 70%;
+    height: auto;
+    background: transparent;
+    margin: 0px auto;
+
+}
+
+#logo{
+    float: left;
+    width: 80%;
+    height: 100%;
+    padding: 28px;
+}
+#logo a{
+    font-family: "fajala",Helvetica;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color:#2979CD;
+    text-shadow: 0px 0px 0px black, 1px 1px 0px black, 2px 2px 0px black;
+    transition: all 500ms;
+
+
+}
+
+#logo a:hover{
+    cursor: pointer;
+    text-shadow: 0px 0px 0px black, -1px -1px 0px black, -2px 2px 0px black;
+
+}
+
+#nav{
+    clear:both;
+    width: 100%;
+    background: linear-gradient(to bottom,#f9f9f9 0px,#e9e9e9 100%);    
+    height: 30px;
+    border:1px solid #c9c9c9;
+    border-radius: 8px;
+    box-shadow: 0px 1px 1px #eee;
+    overflow: hidden;
+}
+
+#nav ul{
+    list-style: none!important;
+}
+
+
+#nav ul li{
+    float: left;
+    line-height: 30px;
+    border-right: 1px solid #d6d6d6;
+
+}
+
+#nav li a{
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    color: #999;
+
+}
+
+#nav li a:hover{
+    background: linear-gradient(to bottom,#f2f2f2 0px,#dad9d4 100%);   
+
+}
+
+
+
+/*****CONTENIDO*****/
+#contenedor{
+    width: 69%;
+    min-height: auto;
+    margin: 0px auto;
+    margin-top:30px; 
+
+
+}
+/***********BARRA LATERAL*************/
+#aside{
+    float: right;
+    width: 17%;
+    min-height: auto;
+
+
+}
+
+
+/****caja principal**************/
+#principal{
+    width: 75%;
+    min-height: 600px;
+
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+#principal h1{
+    font-size: 32px;
+    color:#444;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #ccc;
+    font-family: "fajala";
+}
+#principal p{
+    margin-top: 8px;
+
+}
+#principal a{
+    color: #333;
+}
+#principal h2{
+    font-size: 20px;
+    color:#2979CD;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #ccc;
+    font-family: "fajala";
+    margin-top: 25px;
+
+}
+
+#ver-todas a{
+    display: block;
+    border-radius: 2px;
+    padding: 15px;
+    color: white;
+    background: #007ee5;
+    border:1px solid #156785;
+    cursor: pointer;
+    width: 160px;
+    margin: 0px auto;
+    margin-top: 40px;
+}
+.block-aside{
+    display: block;
+    width: 90%;
+    height: auto;
+    margin: 0px auto;
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.3), 0px 3px 7px rgba(0,0,0,0.3), 0px 0px 1px #FFFFFF inset, 0px -3px 2px rgba(0,0,0,0.25) inset; 
+
+}
+
+input[type="text"],input[type="email"],
+input[type="password"]{
+    margin-bottom: 10px;
+    padding: 5px;
+}
+label,input[type="text"],input[type="email"],
+input[type="password"]{
+    display: block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+
+
+}
+
+input[type="button"],input[type="submit"]{
+
+    display: block;
+    border-radius: 2px;
+
+    color: white;
+    background: #007ee5;
+
+    cursor: pointer;
+    padding: 7px;
+    margin: 0px auto;
+
+
+}
+
+.block-aside h3{
+    margin-bottom: 15px;
+
+
+
+}
+
+
+#footer{
+    clear: both;
+    width: 70%;
+    margin: 0 auto;
+  background: linear-gradient(to bottom,#f9f9f9 0px,#e9e9e9 100%);    
+ border: 1px solid #c9c9c9;
+ border-bottom: none;
+ border-radius: 8px 8px 0 0 ;
+    color: #666;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
