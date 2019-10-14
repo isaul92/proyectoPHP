@@ -17,20 +17,19 @@ if (isset($_POST)) {
         //comprobar la contraseña
         var_dump($usuario);
         $verify = password_verify($contraseña, $usuario["pass"]);
-        if($verify){
+        if ($verify) {
             ///utilizar una sesion para guardar los datos del usuario logueado
-               $_SESSION["usuario"] = $usuario;
-        if(isset($_SESSION["error_login"])){
-            $_SESSION["error_login"]=null;
+            $_SESSION["usuario"] = $usuario;
+            if (isset($_SESSION["error_login"])) {
+                $_SESSION["error_login"] = null;
+            }
+        }else{
+             $_SESSION["error_login"] = "Logeo incorrecto!";
         }
-               
-               
-        }
-    } else {
-   
-    }
+  
 } else {
-    $_SESSION["error_login"] = "login incorrecto";
+    $_SESSION["error_login"] = "Logeo incorrecto!";
+}
 }
 header("Location:index.php");
 

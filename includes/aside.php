@@ -3,25 +3,33 @@
 <!--   BARRA LATERAL  <>    -->
 <div id="contenedor">
     <aside id="aside">
-
         <?php if (isset($_SESSION["usuario"])): ?>
             <div id="usuario-logeado" class="block-aside">
-
                 <h3>
                     <?= $_SESSION["usuario"]["nombre"] . " " . $_SESSION["usuario"]["apellido"] ?>
                 </h3>
+                <!--   BOTONES  <>    -->
+                
+                <a href="cerrarSesion.php" class="boton">  Cerrar Sesion     </a>
+                   
 
+                
             </div>
-
-
-
-
         <?php endif; ?>
 
-
-
+        
+        
+        
         <div id="login" class="block-aside">
             <h3>Identificate</h3>
+                 <?php if (isset($_SESSION["error_login"])): ?>
+            <div class="alerta alerta-error" class="block-aside">
+                <h3>
+                    <?= $_SESSION["error_login"]?>
+                </h3>
+            </div>
+        <?php endif; ?>
+
             <form action="login.php" method="POST">
                 <label>Email</label>
                 <input type="email" name="email" placeholder="Ingrese email">
@@ -34,16 +42,12 @@
 
         <div id="login" class="block-aside">
             <h3>Registrate</h3>
-
-
             <?php
             include 'includes/helpers.php';
             if (isset($_SESSION["errores"])) {
+                         }
 
-
-                //       var_dump($_SESSION["errores"]);
-            }
-
+                         
             if (isset($_SESSION["completado"])) {
                 echo "<div class='alerta alertaexito'>" . $_SESSION["completado"] . "</div>";
             } else if (isset($_SESSION["errores"]["general"])) {

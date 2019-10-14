@@ -195,7 +195,7 @@ input[type="password"]{
 
 }
 
-input[type="button"],input[type="submit"]{
+input[type="button"],input[type="submit"],#boton{
 
     display: block;
     border-radius: 2px;
