@@ -1,9 +1,10 @@
 <?php
 
+if (!empty($_POST)) {
+    require_once './includes/conexion.php';;
 session_start();
 var_dump($_POST);
 $errores = array();
-if (!empty($_POST)) {
     $nombre = !empty($_POST["nombre"]) ? $_POST["nombre"] : FALSE;
     $apellidos = !empty($_POST["apellidos"]) ? $_POST["apellidos"] : FALSE;
     $email = !empty($_POST["email"]) ? $_POST["email"] : FALSE;
@@ -45,8 +46,20 @@ if (!empty($_POST)) {
 
     if (count($errores) == 0) {
         $cguardarUsuario = true;
+        $password_segura= password_hash($contraseña, PASSWORD_BCRYPT,['cost'=>4]);
+        
+        $sql="insert into usuarios values(null,'$nombre','$apellidos','$email','$password_segura',CURDATE())";
+        echo $sql;
+        $guardar= mysqli_query($bddatos, $sql);
+        if($guardar){
+            $_SESSION["completado"]="El registro se ha completado con exito";
+        }else{
+            $_SESSION["errores"]["general"]="fallo al guardar el usuario";
+        }
+        
     } else {
         $_SESSION["errores"] = $errores;
         header("Location:index.php");
     }
 } 
+header("Location:index.php");
