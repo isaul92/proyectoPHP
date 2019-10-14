@@ -1,7 +1,7 @@
 <?php
 
 if (!empty($_POST)) {
-    require_once './includes/conexion.php';;
+    require_once 'includes/conexion.php';;
 session_start();
 var_dump($_POST);
 $errores = array();
@@ -62,4 +62,4 @@ $errores = array();
         header("Location:index.php");
     }
 } 
-header("Location:index.php");
+//header("Location:index.php");
