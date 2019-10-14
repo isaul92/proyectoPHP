@@ -25,19 +25,9 @@ and open the template in the editor.<>
         require_once './includes/header.php';
         ?>
 
-  <?php
-    require_once './includes/aside.php';
-    ?>
-
-
-
-
-
-
-
-        <!--   CAJA PRINCIPAL     -->        <!--  <>  <> <> <>      <>   -->
-        <!--  <>  <> <> <>      <>   -->
-
+        <?php
+        require_once './includes/aside.php';
+        ?>
         <div id="principal">
 
             <h1>Ultimas entradas</h1>
