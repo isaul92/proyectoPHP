@@ -9,26 +9,24 @@
                     <?= $_SESSION["usuario"]["nombre"] . " " . $_SESSION["usuario"]["apellido"] ?>
                 </h3>
                 <!--   BOTONES  <>    -->
-                
-                <a href="cerrarSesion.php" class="boton">  Cerrar Sesion     </a>
-                   
-
-                
+                <a href="crearEntradas.php" id='boton'><p>Crear entradas</p></a>
+                <a href="misDatos.php" id='boton'>Mis datos</a>
+                <a href="cerrarSesion.php" id='boton'>Cerrar Sesion</a>
             </div>
         <?php endif; ?>
 
-        
-        
-        
+
+
+
         <div id="login" class="block-aside">
             <h3>Identificate</h3>
-                 <?php if (isset($_SESSION["error_login"])): ?>
-            <div class="alerta alerta-error" class="block-aside">
-                <h3>
-                    <?= $_SESSION["error_login"]?>
-                </h3>
-            </div>
-        <?php endif; ?>
+            <?php if (isset($_SESSION["error_login"])): ?>
+                <div class="alerta alerta-error" class="block-aside">
+                    <h3>
+                        <?= $_SESSION["error_login"] ?>
+                    </h3>
+                </div>
+            <?php endif; ?>
 
             <form action="login.php" method="POST">
                 <label>Email</label>
@@ -45,9 +43,10 @@
             <?php
             include 'includes/helpers.php';
             if (isset($_SESSION["errores"])) {
-                         }
+                
+            }
 
-                         
+
             if (isset($_SESSION["completado"])) {
                 echo "<div class='alerta alertaexito'>" . $_SESSION["completado"] . "</div>";
             } else if (isset($_SESSION["errores"]["general"])) {
@@ -58,18 +57,18 @@
 
                 <label>Nombre</label>
                 <input type="text" name="nombre" placeholder="Ingrese su nombre">                          
-                <?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "nombre") : ""; ?>
+<?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "nombre") : ""; ?>
                 <label>Apellidos</label>
                 <input type="text" name="apellidos" placeholder="Ingrese sus apllidos">
-                <?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "apellidos") : ""; ?>
+<?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "apellidos") : ""; ?>
                 <label>Email</label>
                 <input type="email" name="email" placeholder="Ingrese email">
-                <?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "email") : ""; ?>
+<?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "email") : ""; ?>
                 <label>Contraseña</label>
                 <input type="password" name="pass"  placeholder="Ingrese contraseña">
-                <?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "pass") : ""; ?>
+<?php echo isset($_SESSION["errores"]) ? mostrarError($_SESSION["errores"], "pass") : ""; ?>
                 <input type="submit"  required="required" name="submit" value="Registrar">
             </form>
-            <?php borrarErrores(); ?>
+<?php borrarErrores(); ?>
         </div>
     </aside>
